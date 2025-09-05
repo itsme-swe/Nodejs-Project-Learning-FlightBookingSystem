@@ -1,7 +1,7 @@
 const { where } = require("sequelize");
 const { Logger } = require("../config");
 
-class Crudrepository {
+class CrudRepository {
   constructor(model) {
     this.model = model;
   }
@@ -32,7 +32,7 @@ class Crudrepository {
 
   async get(data) {
     try {
-      const response = await this.model.findbyPk(data);
+      const response = await this.model.findByPk(data);
       return response;
     } catch (error) {
       Logger.error("Something went wrong in Crud Repo: get");
@@ -65,7 +65,7 @@ class Crudrepository {
   }
 }
 
-module.exports = Crudrepository;
+module.exports = CrudRepository;
 
 /*
 🔶 Explaination: 
